@@ -161,7 +161,7 @@
 <body>
 <h1> METRICS Tool v1.0</h1>
 
-	<table  class = "center" >
+	<table  class = "center" id ="METRICS">
 
 		<tbody>
 		<thead>
@@ -993,25 +993,108 @@
 			  document.getElementById('score').innerHTML = roundedScore + '%';
 			}
 
-
-
-                
-				
-				
-				
-				
-				
-				
-				
-
             </script>
+
+
+
+
+
+
+<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+<script>
+    function ExportToExcel(type, fn, dl) {
+        var elt = document.getElementById('METRICS');
+        var rows = elt.querySelectorAll('tr');
+        var headers = [];
+        var data = [];
+
+        // Retrieve column headers
+        var headerRow = rows[1];
+        var cells = headerRow.getElementsByTagName('th');
+        for (var i = 0; i < cells.length; i++) {
+            if (i === cells.length - 1) {
+                headers.push('Available Options');
+				headers.push('User Decision');				// New name for the column with radio buttons because it comes emptyy
+            } else {
+                headers.push(cells[i].innerText);
+            }
+        }
+
+        // Retrieve data rows
+        for (var j = 2; j < rows.length; j++) {
+            var row = rows[j];
+            var rowData = [];
+            var cells = row.getElementsByTagName('td');
+            for (var k = 0; k < cells.length; k++) {
+                rowData.push(cells[k].innerText);
+            }
+            data.push(rowData);
+        }
+
+        // Add radio button values to the data array
+        for (var j = 2; j < rows.length; j++) {
+            var row = rows[j];
+            var rowData = [];
+            var cells = row.getElementsByTagName('td');
+            var radioCell = cells[cells.length - 1];
+            var radioButton = radioCell.querySelector('input[type="radio"]');
+            var radioValue = '';
+            if (radioButton) {
+                if (radioButton.checked) {
+                    radioValue = radioButton.value;
+                } else {
+                    var defaultRadioButton = radioCell.querySelector('input[type="radio"][checked]');
+                    if (defaultRadioButton) {
+                        radioValue = defaultRadioButton.value;
+                    }
+                }
+            }
+            rowData.push(radioValue);
+            data[j - 2] = data[j - 2].concat(rowData);
+        }
+
+
+
+        var sheet = XLSX.utils.aoa_to_sheet([headers].concat(data));
+        var wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, sheet, 'Sheet1');
+
+        return dl ?
+            XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
+            XLSX.writeFile(wb, fn || ('MySheetName.' + (type || 'xlsx')));
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+			
+
+
+
+
+
+			
+			
+		
+			
+
+			
 
         </tbody>
 		
 
     </table>
 <p></p>
-<p style="text-align: center"><button id="printPageButton" onClick="window.print()" >Print METRICS score </button></p>
+<p style="text-align: center"><button id="printPageButton" onClick="window.print()" >Print</button></p>
+<p></p>
+<p style="text-align: center"><button onclick="ExportToExcel('xlsx')">Export to Excel</button></p>
 
 </body>
 
