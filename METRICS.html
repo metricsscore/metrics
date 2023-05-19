@@ -268,14 +268,14 @@
 				<td bgcolor="#fce8e9"><div class="tooltip">?<span class="tooltiptext">>>>"Segmentation" refers to i) Fine delineation of a region or volume of interest; ii) Rough delineation with bounding boxes; or, iii) cropping the image around a region of interest.</span>
 				</div>Does the study include segmentation?</td>
 				<td bgcolor="#fce8e9"></td>
-				<td bgcolor="#fce8e9"><input type="radio" name="Condition1" value="yes" id="myCheck1.1" onchange="verifyAnswer1_1()">Yes <input type="radio" name="Condition1" value="no" id="myCheck1" onchange="verifyAnswer1()">No </td>
+				<td bgcolor="#fce8e9"><input type="radio" name="Condition1" value="yes" id="myCheck1.1" onchange="verifyAnswer1_1()">Yes <input type="radio" name="Condition1" value="no" id="myCheck1" onchange="verifyAnswer1()" checked="checked">No </td>
 			</tr>
 			<tr>
 				<td bgcolor="#fce8e9">Condition#2</td>
 				<td bgcolor="#fce8e9"><div class="tooltip">?<span class="tooltiptext">>>>"Fully automated segmentation" refers to segmentation process without any human intervention.</span>
 				</div>Does the study include fully automated segmentation?</td>
 				<td bgcolor="#fce8e9"></td>
-				<td bgcolor="#fce8e9"><input type="radio" name="Condition2" value="yes" id="myCheck2.1" onchange="verifyAnswer2_1()">Yes <input type="radio" name="Condition2" value="no" id="myCheck2" onchange="verifyAnswer2()">No </td>
+				<td bgcolor="#fce8e9"><input type="radio" name="Condition2" value="yes" id="myCheck2.1" onchange="verifyAnswer2_1()" disabled="disababled">Yes <input type="radio" name="Condition2" value="no" id="myCheck2" onchange="verifyAnswer2()" checked="checked" disabled="disababled">No </td>
 			</tr>
 			<tr>
 				<td>Item#8</td>
@@ -315,7 +315,7 @@
 				<td bgcolor="#fce8e9"><div class="tooltip">?<span class="tooltiptext">>>>"Hand-crafted radiomic features" (i.e., traditional radiomic features) are created in advance by human experts or mathematicians.</span>
 				</div>Does the study include hand-crafted feature extraction?</td>
 				<td bgcolor="#fce8e9"></td>
-				<td bgcolor="#fce8e9"><input type="radio" name="Condition3" value="yes" id="myCheck3.1" onchange="verifyAnswer3_1()">Yes <input type="radio" name="Condition3" value="no" id="myCheck3" onchange="verifyAnswer3()">No </td>
+				<td bgcolor="#fce8e9"><input type="radio" name="Condition3" value="yes" id="myCheck3.1" onchange="verifyAnswer3_1()">Yes <input type="radio" name="Condition3" value="no" id="myCheck3" onchange="verifyAnswer3()" checked="checked">No </td>
 			</tr>
 			<tr>
 				<td>Item#11</td>
@@ -354,7 +354,7 @@
 				<td bgcolor="#fce8e9"><div class="tooltip">?<span class="tooltiptext">>>>"Tabular data" refers to data that is organized in a table with rows and columns.</span>
 				</div>Does the study include tabular data?</td>
 				<td bgcolor="#fce8e9"></td>
-				<td bgcolor="#fce8e9"><input type="radio" name="Condition4" value="yes" id="myCheck4.1" onchange="verifyAnswer4_1()">Yes <input type="radio" name="Condition4" value="no" id="myCheck4" onchange="verifyAnswer4()">No </td>
+				<td bgcolor="#fce8e9"><input type="radio" name="Condition4" value="yes" id="myCheck4.1" onchange="verifyAnswer4_1()">Yes <input type="radio" name="Condition4" value="no" id="myCheck4" onchange="verifyAnswer4()" checked="checked">No </td>
 			</tr>
 			<tr>
 				<td bgcolor="#fce8e9">Condition#5</td>
@@ -363,7 +363,7 @@
 				</div>
 				Does the study include end-to-end deep learning?</td>
 				<td bgcolor="#fce8e9"></td>
-				<td bgcolor="#fce8e9"><input type="radio" name="Condition5" value="yes" id="myCheck5.1" onchange="verifyAnswer5_1()">Yes <input type="radio" name="Condition5" value="no" id="myCheck5" onchange="verifyAnswer5()">No </td>
+				<td bgcolor="#fce8e9"><input type="radio" name="Condition5" value="yes" id="myCheck5.1" onchange="verifyAnswer5_1()">Yes <input type="radio" name="Condition5" value="no" id="myCheck5" onchange="verifyAnswer5()" checked="checked">No </td>
 			</tr>
 			<tr>
 				<td>Item#14</td>
@@ -582,7 +582,7 @@
 					  document.getElementById("5").disabled = true;
 					  document.getElementById("7").disabled = true;
 					  document.getElementById("8").disabled = true;
-					  document.getElementById("myCheck2").checked = false;
+					  document.getElementById("myCheck2").checked = true;
 					  document.getElementById("myCheck2").disabled = true;
 					  document.getElementById("myCheck2.1").checked = false;
 					  document.getElementById("myCheck2.1").disabled = true;
@@ -629,7 +629,7 @@
 					  document.getElementById("5").disabled = false;
 					  document.getElementById("7").disabled = false;
 					  document.getElementById("8").disabled = false;
-					  document.getElementById("myCheck2").checked = false;
+					  document.getElementById("myCheck2").checked = true;
 					  document.getElementById("myCheck2").disabled = false;
 					  document.getElementById("myCheck2.1").checked = false;
 					  document.getElementById("myCheck2.1").disabled = false;
@@ -949,6 +949,8 @@
             <script>
 								//This part will be modified according to METRICS weights!!!
 			function calculateScore() {
+				/* Use this part in case a check for conditions is necessary. It also includes a popup.
+				
 				var dev_myCheck11Checked = document.getElementById("myCheck1.1").checked;
 				var dev_myCheck1Checked = document.getElementById("myCheck1").checked;
 				var dev_myCheck21Checked = document.getElementById("myCheck2.1").checked;
@@ -962,7 +964,7 @@
 
 			if ((dev_myCheck11Checked == false && dev_myCheck1Checked == false) || (dev_myCheck21Checked == false && dev_myCheck2Checked == false) || (dev_myCheck31Checked == false && dev_myCheck3Checked == false) || (dev_myCheck41Checked == false && dev_myCheck4Checked == false) || (dev_myCheck51Checked == false && dev_myCheck5Checked == false)) {
 				alert("Please fill out all the CONDITIONS to get the score!");}
-			else   
+			else */  
 				
 			  var score = 0;
 			  var counter = 0;
