@@ -283,7 +283,7 @@
 				</div>
 				Transparent description of segmentation methodology </td>
 				<td>0.01</td>
-				<td><input type="radio" name="item8" value="yes" id="1" class="disabled" >Yes <input type="radio" name="item8" value="no" id="2" checked="checked">No </td>
+				<td><input type="radio" name="item8" value="yes" id="1" class="disabled"  >Yes <input type="radio" name="item8" value="no" id="2" checked="checked">No </td>
 			</tr>
 			<tr>
 				<td>Item#9</td>
@@ -332,7 +332,7 @@
 				Use of standardized feature extraction software<div class="tooltip2">C<span class="tooltiptext2">*Please Note: This item is conditional. It is applicable only for studies with hand-crafted radiomic features. In the case of DL studies, the exclusion of this item from scoring will not affect the final score in the percentage scale.</span>
 				</div></td>
 				<td>0.02</td>
-				<td><input type="radio" name="item12" value="yes" id="12.1">Yes <input type="radio" name="item12" value="no" id="12.2" checked="checked">No  </td>
+				<td><input type="radio" name="item12" value="yes" id="12.1" onClick="checkCondition()">Yes <input type="radio" name="item12" value="no" id="12.2" checked="checked" onClick="checkCondition()" >No  </td>
 			</tr>
 			<tr>
 				<td>Item#13</td>
@@ -753,6 +753,13 @@
 					  document.getElementById("12.2").disabled = false;
 					  
 					  
+					     }
+				   
+				}					  
+					
+					  
+					  
+				  
 
 					
 					
@@ -760,9 +767,7 @@
 					  
 
 					  
-				   }
-				   
-				}
+			
 				
 					function verifyAnswer4() {
 					//disable all the radio button 
@@ -944,6 +949,21 @@
             <script>
 								//This part will be modified according to METRICS weights!!!
 			function calculateScore() {
+				var dev_myCheck11Checked = document.getElementById("myCheck1.1").checked;
+				var dev_myCheck1Checked = document.getElementById("myCheck1").checked;
+				var dev_myCheck21Checked = document.getElementById("myCheck2.1").checked;
+				var dev_myCheck2Checked = document.getElementById("myCheck2").checked;
+				var dev_myCheck31Checked = document.getElementById("myCheck3.1").checked;
+				var dev_myCheck3Checked = document.getElementById("myCheck3").checked;
+				var dev_myCheck41Checked = document.getElementById("myCheck4.1").checked;
+				var dev_myCheck4Checked = document.getElementById("myCheck4").checked;
+				var dev_myCheck51Checked = document.getElementById("myCheck5.1").checked;
+				var dev_myCheck5Checked = document.getElementById("myCheck5").checked;
+
+			if ((dev_myCheck11Checked == false && dev_myCheck1Checked == false) || (dev_myCheck21Checked == false && dev_myCheck2Checked == false) || (dev_myCheck31Checked == false && dev_myCheck3Checked == false) || (dev_myCheck41Checked == false && dev_myCheck4Checked == false) || (dev_myCheck51Checked == false && dev_myCheck5Checked == false)) {
+				alert("Please fill out the Conditions!");}
+			else   
+				
 			  var score = 0;
 			  var counter = 0;
 			  var weights = [0.11, 0.02, 0.04, 0.05, 0.03, 0.06, 0.02, 0.01, 0.02, 0.03, 0.07, 0.02, 0.05, 0.07, 0.03, 0.03, 0.03, 0.01, 0.07, 0.02, 0.01, 0.06, 0.06, 0.01, 0.06, 0.04, 0.03, 0.06, 0.01, 0.02]
