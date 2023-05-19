@@ -55,7 +55,16 @@
 			margin-right: 5px;
 		}
 		
-
+		.button {
+		  background-color: #4CAF50; /* Green */
+		  border: none;
+		  color: white;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		}
 		
 		
 		.tooltip {
@@ -540,7 +549,7 @@
 			
 	
 			<tr style="background-color:#fff1d6;color:black;">
-				<td colspan=1><button onclick='calculateScore()'>Calculate Score</button></td>
+				<td></td>
 				<td colspan=2 style="text-align:right"> <b>Total METRICS score:</b>  </td><td id='score'style="text-align:center;font-weight:bold">0.0%</td></tr>
 				<td></td>
 				
@@ -1092,9 +1101,10 @@
 
     </table>
 <p></p>
-<p style="text-align: center"><button id="printPageButton" onClick="window.print()" >Print</button></p>
+<p style="text-align: center"><button style = "background-color: #e3908f; font-size: 20px;" onclick='calculateScore()'>Calculate Score</button></p>
 <p></p>
-<p style="text-align: center"><button onclick="ExportToExcel('xlsx')">Export to Excel</button></p>
+<p style="text-align: center"><button id="printPageButton" onClick="window.print()" >Print Score</button>     <button onclick="ExportToExcel('xlsx')">Export Score</button></p>
+
 
 </body>
 
