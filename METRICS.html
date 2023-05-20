@@ -292,7 +292,7 @@
 				</div>
 				Transparent description of segmentation methodology </td>
 				<td>0.01</td>
-				<td><input type="radio" name="item8" value="yes" id="1" class="disabled"  >Yes <input type="radio" name="item8" value="no" id="2" checked="checked">No </td>
+				<td><input type="radio" name="item8" value="yes" id="1" disabled="disabled"  >Yes <input type="radio" name="item8" value="no" id="2" disabled="disabled">No </td>
 			</tr>
 			<tr>
 				<td>Item#9</td>
@@ -303,7 +303,7 @@
 				Formal evaluation of fully automated segmentation<div class="tooltip2">C<span class="tooltiptext2">Please Note: This item is conditional. It is applicable only for studies implementing automated segmentation. In the case of manual or semi-automated segmentation, the exclusion of this item from scoring will not affect the final score on the percentage scale.</span>
 				</div></td>
 				<td>0.02</td>
-				<td><input type="radio" name="item9" value="yes" id="4">Yes <input type="radio" name="item9" value="no" id="5" checked="checked">No </td>
+				<td><input type="radio" name="item9" value="yes" id="4" disabled="disabled">Yes <input type="radio" name="item9" value="no" id="5" disabled="disabled">No </td>
 			</tr>
 			<tr>
 				<td>Item#10</td>
@@ -311,7 +311,7 @@
 				</div>
 				Test set segmentation masks produced by a single reader or automated tool</td>
 				<td>0.03</td>
-				<td><input type="radio" name="item10" value="yes" id="7">Yes <input type="radio" name="item10" value="no" id="8" checked="checked">No </td>
+				<td><input type="radio" name="item10" value="yes" id="7" disabled="disabled">Yes <input type="radio" name="item10" value="no" id="8" disabled="disabled">No </td>
 			</tr>
 			
 			<tr>
@@ -341,7 +341,7 @@
 				Use of standardized feature extraction software<div class="tooltip2">C<span class="tooltiptext2">*Please Note: This item is conditional. It is applicable only for studies with hand-crafted radiomic features. In the case of DL studies, the exclusion of this item from scoring will not affect the final score in the percentage scale.</span>
 				</div></td>
 				<td>0.02</td>
-				<td><input type="radio" name="item12" value="yes" id="12.1" onClick="checkCondition()">Yes <input type="radio" name="item12" value="no" id="12.2" checked="checked" onClick="checkCondition()" >No  </td>
+				<td><input type="radio" name="item12" value="yes" id="12.1" disabled="disabled" onClick="checkCondition()">Yes <input type="radio" name="item12" value="no" id="12.2" disabled="disabled" onClick="checkCondition()" >No  </td>
 			</tr>
 			<tr>
 				<td>Item#13</td>
@@ -381,7 +381,7 @@
 				Removal of non-robust features<div class="tooltip2">C<span class="tooltiptext2">*Please Note: This item is conditional. It is applicable only for the studies having tabular data (i.e., numeric radiomic features in a tabulated format, which is usually seen in hand-crafted and some deep learning-based studies as deep features).</span>
 				</div></td>
 				<td>0.07</td>
-				<td><input type="radio" name="item14" value="yes" id="14.1">Yes <input type="radio" name="item14" value="no" id="14.2" checked="checked">No </td>
+				<td><input type="radio" name="item14" value="yes" id="14.1" disabled="disabled">Yes <input type="radio" name="item14" value="no" id="14.2" disabled="disabled">No </td>
 			</tr>
 			<tr>
 				<td>Item#15</td>
@@ -390,7 +390,7 @@
 				Removal of redundant features<div class="tooltip2">C<span class="tooltiptext2">*Please Note: This item is conditional. It is applicable only for the studies having tabular data (i.e., numeric radiomic features in a tabulated format, which is usually seen in hand-crafted and some deep learning-based studies as deep features).</span>
 				</div></td>
 				<td>0.03</td>
-				<td><input type="radio" name="item15" value="yes" id="15.1">Yes <input type="radio" name="item15" value="no" id="15.2" checked="checked">No </td>
+				<td><input type="radio" name="item15" value="yes" id="15.1" disabled="disabled">Yes <input type="radio" name="item15" value="no" id="15.2" disabled="disabled">No </td>
 			</tr>
 			<tr>
 				<td>Item#16</td>
@@ -399,7 +399,7 @@
 				Appropriateness of dimensionality compared to data size<div class="tooltip2">C<span class="tooltiptext2">*Please Note: This item is conditional. It is applicable only for the studies having tabular data (i.e., numeric radiomic features in a tabulated format, which is usually seen in hand-crafted and some deep learning-based studies as deep features).</span>
 				</div></td>
 				<td>0.03</td>
-				<td><input type="radio" name="item16" value="yes" id="16.1">Yes <input type="radio" name="item16" value="no" id="16.2" checked="checked">No </td>
+				<td><input type="radio" name="item16" value="yes" id="16.1" disabled="disabled">Yes <input type="radio" name="item16" value="no" id="16.2" disabled="disabled">No </td>
 			</tr>
 			<tr>
 				<td>Item#17</td>
@@ -408,7 +408,7 @@
 				Robustness assessment of end-to-end deep learning pipelines<div class="tooltip2">C<span class="tooltiptext2">*Please Note: This item is conditional. It is applicable only for the studies employing a DL pipeline for the entire feature extraction, processing and modeling process (e.g., computer vision models such as convolutional networks or transformers), without explicit conversion of DL-based image features to a tabular format for further processing or analysis.</span>
 				</div></td>
 				<td>0.03</td>
-				<td><input type="radio" name="item17" value="yes" id="17.1">Yes <input type="radio" name="item17" value="no" id="17.2" checked="checked">No </td>
+				<td><input type="radio" name="item17" value="yes" id="17.1" disabled="disabled">Yes <input type="radio" name="item17" value="no" id="17.2" disabled="disabled">No </td>
 			</tr>
 			
 			<tr>
@@ -626,7 +626,7 @@
 					  document.getElementById("2").checked = true;
 					  
 					  document.getElementById("4").checked = false;
-					  document.getElementById("5").checked = true;
+					  document.getElementById("5").checked = false;
 					  document.getElementById("7").checked = false;
 					  document.getElementById("8").checked = true;
 					
@@ -634,8 +634,8 @@
 					  document.getElementById("1").disabled = false;
 					  document.getElementById("2").disabled = false;
 					  
-					  document.getElementById("4").disabled = false;
-					  document.getElementById("5").disabled = false;
+					  document.getElementById("4").disabled = true;
+					  document.getElementById("5").disabled = true;
 					  document.getElementById("7").disabled = false;
 					  document.getElementById("8").disabled = false;
 					  document.getElementById("myCheck2").checked = true;
