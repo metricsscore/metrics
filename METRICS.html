@@ -159,9 +159,7 @@
 				border: 0px;
 				font-size: small;
 			  }
-			  .tooltip {
-				display: none;
-			  }
+			  
 			  #versionlinkbutton {
 				display: none;
 			  }
@@ -1104,9 +1102,9 @@
 
     </table>
 <p></p>
-<p style="text-align: center"><button style = "background-color: #e3908f; font-size: 20px;" onclick='calculateScore()'>Calculate Score</button></p>
+<p style="text-align: center"><button style = "background-color: #e3908f; font-size: 20px;"  id="printPageButton" onclick='calculateScore()'>Calculate Score</button></p>
 <p></p>
-<p style="text-align: center"><button id="printPageButton" onClick="window.print()" >Print to PDF or Paper</button>     <button onclick="ExportToExcel('xlsx')">Export to Excel</button></p>
+<p style="text-align: center"><button id="printPageButton" onClick="window.print()" >Print to PDF or Paper</button>     <button id="printPageButton" onclick="ExportToExcel('xlsx')">Export to Excel</button></p>
 
 
 </body>
