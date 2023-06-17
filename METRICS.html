@@ -200,7 +200,7 @@
 				<div class="tooltip">?<span class="tooltiptext">>>>Whether any guideline or checklist, e.g., CLEAR checklist, is used in designing and reporting, as appropriate for the study design (e.g., handcrafted radiomics or deep learning pipeline).</span>
 				</div>
 				Adherence to radiomics and/or machine learning-specific checklists or guidelines</td>
-				<td>0.250</td>
+				<td id="weight-td1"></td>
 				<td><input type="radio" name="item1" value="yes">Yes <input type="radio" name="item1" value="no" checked="checked">No </td>
 			</tr>
 			<tr>
@@ -208,7 +208,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether inclusion and exclusion criteria are explicitly defined. These should lead to a representative study sample that matches the general population of interest for the study aim.</span>
 				</div>
 				Eligibility criteria that describe a representative study population</td>
-				<td>0.375</td>
+				<td id="weight-td2"></td>
 				<td><input type="radio" name="item2" value="yes">Yes <input type="radio" name="item2" value="no" checked="checked">No </td>
 			</tr>
 			<tr>
@@ -222,7 +222,7 @@
 				extraction, or outdated versions of prognostic tools.</span>
 				</div>
 				High-quality reference standard with a clear definition</td>
-				<td>0.375</td>
+				<td id="weight-td3"></td>
 				<td><input type="radio" name="item3" value="yes">Yes <input type="radio" name="item3" value="no" checked="checked">No </td>
 			</tr>
 			
@@ -237,7 +237,7 @@
 				a diagnostic imaging data source for radiomics analysis.</span>
 				</div>
 				Multi-center</td>
-				<td>0.075</td>
+				<td id="weight-td4"></td>
 				<td><input type="radio" name="item4" value="yes">Yes <input type="radio" name="item4" value="no" checked="checked">No </td>
 			</tr>
 			<tr>
@@ -247,7 +247,7 @@
 				such as acquisition protocol guidelines (e.g., PI-RADS specifications).</span>
 				</div>
 				Clinical translatability of the imaging data source for radiomics analysis</td>
-				<td>0.050</td>
+				<td id="weight-td5"></td>
 				<td><input type="radio" name="item5" value="yes">Yes <input type="radio" name="item5" value="no" checked="checked">No </td>
 			</tr>
 			<tr>
@@ -255,7 +255,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether the image acquisition protocol is clearly reported to ensure the replicability of the method.</span>
 				</div>
 				Imaging protocol with acquisition parameters</td>
-				<td>0.075</td>
+				<td id="weight-td6"></td>
 				<td><input type="radio" name="item6" value="yes">Yes <input type="radio" name="item6" value="no" checked="checked">No </td>
 			</tr>
 			<tr>
@@ -263,7 +263,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether the time interval between the diagnostic imaging exams (used as an input for the radiomics analysis) and the outcome measure/reference standard acquisition is appropriate to validate the presence or absence of target conditions of the radiomics analysis at the moment of the diagnostic imaging exams.</span>
 				</div>
 				The interval between imaging used and reference standard</td>
-				<td>0.050</td>
+				<td id="weight-td7"></td>
 				<td><input type="radio" name="item7" value="yes">Yes <input type="radio" name="item7" value="no" checked="checked">No </td>
 			</tr>
 			
@@ -292,7 +292,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether the rules or the method of the segmentation are defined (e.g., margin shrinkage, peri-tumoral sampling, details of segmentation regardless of whether manual, semi-automated or automated methods are used). In the case of DL-based radiomics, the segmentation can refer to the rough delineation with bounding boxes or cropping the image around a region of interest.</span>
 				</div>
 				Transparent description of segmentation methodology </td>
-				<td>0.078</td>
+				<td id="weight-td8"></td>
 				<td><input type="radio" name="item8" value="yes" id="1" disabled="disabled"  >Yes <input type="radio" name="item8" value="no" id="2" disabled="disabled">No </td>
 			</tr>
 			<tr>
@@ -303,7 +303,7 @@
 				
 				Formal evaluation of fully automated segmentation<div class="tooltip2">C<span class="tooltiptext2">Please Note: This item is conditional. It is applicable only for studies implementing automated segmentation. In the case of manual or semi-automated segmentation, the exclusion of this item from scoring will not affect the final score on the percentage scale.</span>
 				</div></td>
-				<td>0.039</td>
+				<td id="weight-td9"></td>
 				<td><input type="radio" name="item9" value="yes" id="4" disabled="disabled">Yes <input type="radio" name="item9" value="no" id="5" disabled="disabled">No </td>
 			</tr>
 			<tr>
@@ -311,7 +311,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether final segmentation in the test set is produced by a single reader (manually or with a semi-automated tool) or an entirely automated tool, to better reflect clinical practice. </span>
 				</div>
 				Test set segmentation masks produced by a single reader or automated tool</td>
-				<td>0.026</td>
+				<td id="weight-td10"></td>
 				<td><input type="radio" name="item10" value="yes" id="7" disabled="disabled">Yes <input type="radio" name="item10" value="no" id="8" disabled="disabled">No </td>
 			</tr>
 			
@@ -332,7 +332,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether preprocessing of the images is appropriately performed considering the imaging modality (e.g., gray level normalization for MRI, image registration in case of multiple contrasts or modalities) and feature extraction techniques (i.e., 2D or 3D) that are used. For instance, in the case of large slice thickness (e.g., ≥5 mm), extreme upsampling (e.g., 1 x 1 x 1 mm3) of the volume might be inappropriate. In such a case, 2D feature extraction could be preferable, ensuring in-plane isotropy of the pixels. On the other hand, achieving isotropic voxel values should be targeted in 3D feature extraction, to allow for texture feature rotational invariance. Also, whether gray level discretization parameters (bin width, along with resulting gray level range, or bin count) are described in full detail. Description of different image types used (e.g., original, filtered) should also be included (e.g., high and low pass filter combinations for wavelet decomposition, sigma values for Laplacian of Gaussian edge enhancement filtering). If the image window is fixed, it should be clarified.</span>
 				</div>
 				Appropriate use of image preprocessing techniques with transparent description</td>
-				<td>0.125</td>
+				<td id="weight-td11"></td>
 				<td><input type="radio" name="item11" value="yes">Yes <input type="radio" name="item11" value="no" checked="checked">No </td>
 			</tr>
 			<tr>
@@ -341,7 +341,7 @@
 				</div>
 				Use of standardized feature extraction software<div class="tooltip2">C<span class="tooltiptext2">*Please Note: This item is conditional. It is applicable only for studies with hand-crafted radiomic features. In the case of DL studies, the exclusion of this item from scoring will not affect the final score in the percentage scale.</span>
 				</div></td>
-				<td>0.063</td>
+				<td id="weight-td12"></td>
 				<td><input type="radio" name="item12" value="yes" id="12.1" disabled="disabled" onClick="checkCondition()">Yes <input type="radio" name="item12" value="no" id="12.2" disabled="disabled" onClick="checkCondition()" >No  </td>
 			</tr>
 			<tr>
@@ -349,7 +349,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether feature types (e.g., hand-crafted, deep features) and feature classes (for hand-crafted) are described. Also, if a default configuration statement is provided for the remaining feature extraction parameters. A file presenting the complete configuration of these settings should be included in the study materials (e.g., parameter file such as in YAML format, screenshot if a dedicated file for this is not available for the software). In the case of DL, neural network architecture along with all image operations should be described. </span>
 				</div>
 				Transparent reporting of feature extraction parameters, otherwise providing a default configuration statement</td>
-				<td>0.063</td>
+				<td id="weight-td13"></td>
 				<td><input type="radio" name="item13" value="yes" >Yes <input type="radio" name="item13" value="no" checked="checked">No </td>
 			</tr>
 			
@@ -381,7 +381,7 @@
 				</div>
 				Removal of non-robust features<div class="tooltip2">C<span class="tooltiptext2">*Please Note: This item is conditional. It is applicable only for the studies having tabular data (i.e., numeric radiomic features in a tabulated format, which is usually seen in hand-crafted and some deep learning-based studies as deep features).</span>
 				</div></td>
-				<td>0.037</td>
+				<td id="weight-td14"></td>
 				<td><input type="radio" name="item14" value="yes" id="14.1" disabled="disabled">Yes <input type="radio" name="item14" value="no" id="14.2" disabled="disabled">No </td>
 			</tr>
 			<tr>
@@ -390,7 +390,7 @@
 				</div>
 				Removal of redundant features<div class="tooltip2">C<span class="tooltiptext2">*Please Note: This item is conditional. It is applicable only for the studies having tabular data (i.e., numeric radiomic features in a tabulated format, which is usually seen in hand-crafted and some deep learning-based studies as deep features).</span>
 				</div></td>
-				<td>0.037</td>
+				<td id="weight-td15"></td>
 				<td><input type="radio" name="item15" value="yes" id="15.1" disabled="disabled">Yes <input type="radio" name="item15" value="no" id="15.2" disabled="disabled">No </td>
 			</tr>
 			<tr>
@@ -399,7 +399,7 @@
 				</div>
 				Appropriateness of dimensionality compared to data size<div class="tooltip2">C<span class="tooltiptext2">*Please Note: This item is conditional. It is applicable only for the studies having tabular data (i.e., numeric radiomic features in a tabulated format, which is usually seen in hand-crafted and some deep learning-based studies as deep features).</span>
 				</div></td>
-				<td>0.056</td>
+				<td id="weight-td16"></td>
 				<td><input type="radio" name="item16" value="yes" id="16.1" disabled="disabled">Yes <input type="radio" name="item16" value="no" id="16.2" disabled="disabled">No </td>
 			</tr>
 			<tr>
@@ -408,7 +408,7 @@
 				</div>
 				Robustness assessment of end-to-end deep learning pipelines<div class="tooltip2">C<span class="tooltiptext2">*Please Note: This item is conditional. It is applicable only for the studies employing a DL pipeline for the entire feature extraction, processing and modeling process (e.g., computer vision models such as convolutional networks or transformers), without explicit conversion of DL-based image features to a tabular format for further processing or analysis.</span>
 				</div></td>
-				<td>0.037</td>
+				<td id="weight-td17"></td>
 				<td><input type="radio" name="item17" value="yes" id="17.1" disabled="disabled">Yes <input type="radio" name="item17" value="no" id="17.2" disabled="disabled">No </td>
 			</tr>
 			
@@ -422,7 +422,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether the training-validation-test data split is done at the very beginning of the analysis pipeline, prior to any processing step. Data split should be random but reproducible (e.g., fixed random seed), preferably without altering outcome variable distribution in the test set (e.g., using a stratified data split). Moreover, the data split should be on the patient level, not the scan level (i.e., different scans of the same patient should be in the same set). Proper data partitioning should guarantee that all data processing (e.g., scaling, missing value imputation, oversampling or undersampling) is done blinded to the test set data. These techniques should be exclusively fitted on training (or development) data sets and then used to transform test data at the time of inference. If a single training-validation data split is not done and a resampling technique (e.g., cross-validation) is used instead, test data should always be handled separately from this.</span>
 				</div>
 				Proper data partitioning process</td>
-				<td>0.111</td>
+				<td id="weight-td18"></td>
 				<td><input type="radio" name="item18" value="yes">Yes <input type="radio" name="item18" value="no" checked="checked">No </td>
 			</tr>
 			<tr>
@@ -430,7 +430,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether potential confounding factors were analyzed, identified if present, and removed if necessary (e.g., if it has a strong influence on generalizability). These may include different distributions of patient characteristics (e.g., gender, lesion stage or grade) across sites or scanners.</span>
 				</div>
 				Handling of confounding factors</td>
-				<td>0.056</td>
+				<td id="weight-td19"></td>
 				<td><input type="radio" name="item19" value="yes">Yes <input type="radio" name="item19" value="no" checked="checked">No </td>
 			</tr>
 			
@@ -444,7 +444,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether appropriate accuracy metrics are reported, such as AUC for Receiver Operating Characteristics (ROC) or Precision-Recall (PRC) curves and confusion matrix-derived accuracy metrics (e.g., specificity, sensitivity, precision, F1 score) for classification tasks; MSE, RMSE, and MAE for regression tasks. For classification tasks, the confusion matrix should always be included, to allow the calculation of additional metrics. If training a DL network, loss curves should be presented.</span>
 				</div>
 				Use of appropriate performance evaluation metrics for task</td>
-				<td>0.099</td>
+				<td id="weight-td20"></td>
 				<td><input type="radio" name="item20" value="yes">Yes <input type="radio" name="item20" value="no" checked="checked">No </td>
 			</tr>
 			<tr>
@@ -452,7 +452,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether uncertainty measures are included in the analysis, such as 95% confidence interval (CI), standard deviation (SD), or standard error (SE). Report on methodology to derive that distribution (ie. bootstrapping with replacement, etc).</span>
 				</div>
 				Consideration of uncertainty</td>
-				<td>0.033</td>
+				<td id="weight-td21"></td>
 				<td><input type="radio" name="item21" value="yes">Yes <input type="radio" name="item21" value="no" checked="checked">No </td>
 			</tr>
 			
@@ -461,7 +461,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether the final model’s calibration is assessed.</span>
 				</div>
 				Calibration assessment</td>
-				<td>0.025</td>
+				<td id="weight-td22"></td>
 				<td><input type="radio" name="item22" value="yes">Yes <input type="radio" name="item22" value="no" checked="checked">No </td>
 			</tr>
 			<tr>
@@ -469,7 +469,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Use of a single imaging set (such as a single MRI sequence rather than multiple, or a single phase in a dynamic contrast-enhanced scan) should be preferred, as multi-parametric imaging may unnecessarily increase data dimensionality and risk of overfitting. Therefore, in the case of multi-parametric studies, uni-parametric evaluations should also be performed to justify the need for a multi-parametric approach by formally comparing their performance (e.g., DeLong’s or McNemar’s tests). This item is also intended to reward studies that experimentally justify the use of more complex models compared to simpler alternatives, in regard to input data type.</span>
 				</div>
 				Use of uni-parametric imaging or proof of its inferiority</td>
-				<td>0.020</td>
+				<td id="weight-td23"></td>
 				<td><input type="radio" name="item23" value="yes">Yes <input type="radio" name="item23" value="no" checked="checked">No </td>
 			</tr>
 			
@@ -478,7 +478,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether a non-radiomic method that is representative of the clinical practice is included in the analysis for comparison purposes. Non-radiomic methods might include semantic features, RADS or RECIST scoring, and simple volume or size evaluations. If no non-radiomics method is available, proof of improved diagnostic accuracy (e.g., improved performance of a radiologist assisted by the model’s output) or patient outcome (e.g., decision analysis, overall survival) should be provided. In any case, the comparison should be done with an appropriate statistical method to evaluate the added practical and clinical value of the model (e.g., DeLong’s test for AUC comparison, decision curve analysis for net benefit comparison, Net Reclassification Index). Furthermore, in case of multiple comparisons, multiple testing correction methods (e.g., Bonferroni) should be considered in order to reduce the false discovery rate provided that the statistical comparison is done with a frequentist approach (rather than Bayesian).   </span>
 				</div>
 				Comparison with a non-radiomic approach or proof of added clinical value</td>
-				<td>0.049</td>
+				<td id="weight-td24"></td>
 				<td><input type="radio" name="item24" value="yes">Yes <input type="radio" name="item24" value="no" checked="checked">No </td>
 			</tr>
 			<tr>
@@ -486,7 +486,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether a comparison with a simple baseline reference model (such as a Zero Rules/No Information Rate classifier) was performed. Use of machine learning methods should be justified by proof of increased performance. In any case, the comparison should be done with an appropriate statistical method (e.g., DeLong’s test for AUC comparison, Net Reclassification Index). Furthermore, in case of multiple comparisons, multiple testing correction methods (e.g., Bonferroni, Benjamini–Hochberg, or Tukey) should be considered in order to reduce the false discovery rate provided that the statistical comparison is done with a frequentist approach (rather than Bayesian).  </span>
 				</div>
 				Comparison with simple or classical statistical models</td>
-				<td>0.025</td>
+				<td id="weight-td25"></td>
 				<td><input type="radio" name="item25" value="yes">Yes <input type="radio" name="item25" value="no" checked="checked">No </td>
 			</tr>
 			
@@ -500,7 +500,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether the model is tested on an independent data set that is sampled from the same source as the training and/or validation sets.</span>
 				</div>
 				Internal testing</td>
-				<td>0.067</td>
+				<td id="weight-td26"></td>
 				<td><input type="radio" name="item26" value="yes">Yes <input type="radio" name="item26" value="no" checked="checked">No </td>
 			</tr>
 			<tr>
@@ -508,7 +508,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether the model is tested with independent data from other institution(s). This also applies to the studies validating the previously published models trained at another institution.  </span>
 				</div>
 				External testing</td>
-				<td>0.133</td>
+				<td id="weight-td27"></td>
 				<td><input type="radio" name="item27" value="yes">Yes <input type="radio" name="item27" value="no" checked="checked">No </td>
 			</tr>
 			
@@ -523,7 +523,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether any imaging, segmentation, clinical, or radiomics analysis data is shared with the public.</span>
 				</div>
 				Data availability</td>
-				<td>0.037</td>
+				<td id="weight-td28"></td>
 				<td><input type="radio" name="item28" value="yes">Yes <input type="radio" name="item28" value="no" checked="checked">No </td>
 			</tr>
 			<tr>
@@ -531,7 +531,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether all scripts related to automatic segmentation and/or modeling are shared with the public. These should include clear instructions for their implementation (e.g., accompanying documentation, tutorials).</span>
 				</div>
 				Code availability</td>
-				<td>0.037</td>
+				<td id="weight-td29"></td>
 				<td><input type="radio" name="item29" value="yes">Yes <input type="radio" name="item29" value="no" checked="checked">No </td>
 			</tr>
 			<tr>
@@ -539,7 +539,7 @@
 				<td><div class="tooltip">?<span class="tooltiptext">>>>Whether the final model is shared in the form of a raw model file or as a ready-to-use system. If automated segmentation was employed, the corresponding trained model should also be made available to allow replication. These should include clear instructions for their usage (e.g., accompanying documentation, tutorials).</span>
 				</div>
 				Model availability</td>
-				<td>0.037</td>
+				<td id="weight-td30"></td>
 				<td><input type="radio" name="item30" value="yes">Yes <input type="radio" name="item30" value="no" checked="checked">No </td>
 			</tr>
 			
@@ -978,7 +978,36 @@
 				
 			  var score = 0;
 			  var counter = 0;
-			  var weights = [0.250,0.375,0.375,0.075,0.050,0.075,0.050,0.078,0.039,0.026,0.125,0.063,0.063,0.037,0.037,0.056,0.037,0.111,0.056,0.099,0.033,0.025,0.020,0.049,0.025,0.067,0.133,0.037,0.037,0.037]
+			  var weights = [0.037,
+							0.074,
+							 0.092,
+							 0.044,
+							 0.029,
+							 0.044,
+							 0.029,
+							 0.034,
+							 0.022,
+							 0.011,
+							 0.062,
+							 0.031,
+							 0.041,
+							 0.02,
+							 0.02,
+							 0.03,
+							 0.02,
+							 0.06,
+							 0.03,
+							 0.035,
+							 0.023,
+							 0.018,
+							 0.012,
+							 0.029,
+							 0.018,
+							 0.037,
+							 0.075,
+							 0.007,
+							 0.007,
+							 0.007]
 ;
 
 			  for (var i = 1; i <= 30; i++) {
@@ -1002,10 +1031,27 @@
 
 			  document.getElementById('score').innerHTML = roundedScore + '%';
 			}
+			
 
             </script>
 
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var weights = [0.037, 0.074, 0.092, 0.044, 0.029, 0.044, 0.029, 0.034, 0.022, 0.011, 0.062, 0.031, 0.041, 0.02, 0.02, 0.03, 0.02, 0.06, 0.03, 0.035, 0.023, 0.018, 0.012, 0.029, 0.018, 0.037, 0.075, 0.007, 0.007, 0.007];
 
+  var tdElements = [];
+  for (var i = 1; i <= 30; i++) {
+    var tdElement = document.getElementById('weight-td' + i);
+    tdElements.push(tdElement);
+  }
+
+  for (var i = 0; i < 30; i++) {
+    tdElements[i].textContent = weights[i];
+  }
+});
+
+
+  </script>
 
 
 
