@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Scoring System</title>
+	<title>METRICS</title>
 	<meta name="description" content="METRICS tool">
 	<meta name="keywords" content=" Radiomics, Texture analysis, AI, artificial intelligence, machine learning, HTML, CSS, JavaScript">
 	<meta name="author" content="Burak Kocak">
@@ -1070,7 +1070,7 @@ window.addEventListener('DOMContentLoaded', function() {
         for (var i = 0; i < cells.length; i++) {
             if (i === cells.length - 1) {
                 headers.push('Available Options');
-				headers.push('User Decision');				// New name for the column with radio buttons because it comes emptyy
+                headers.push('User Decision');    // New name for the column with radio buttons because it comes emptyy
             } else {
                 headers.push(cells[i].innerText);
             }
@@ -1093,23 +1093,14 @@ window.addEventListener('DOMContentLoaded', function() {
             var rowData = [];
             var cells = row.getElementsByTagName('td');
             var radioCell = cells[cells.length - 1];
-            var radioButton = radioCell.querySelector('input[type="radio"]');
+            var radioButton = radioCell.querySelector('input[type="radio"]:checked'); // Get the checked radio button
             var radioValue = '';
             if (radioButton) {
-                if (radioButton.checked) {
-                    radioValue = radioButton.value;
-                } else {
-                    var defaultRadioButton = radioCell.querySelector('input[type="radio"][checked]');
-                    if (defaultRadioButton) {
-                        radioValue = defaultRadioButton.value;
-                    }
-                }
+                radioValue = radioButton.value;
             }
             rowData.push(radioValue);
             data[j - 2] = data[j - 2].concat(rowData);
         }
-
-
 
         var sheet = XLSX.utils.aoa_to_sheet([headers].concat(data));
         var wb = XLSX.utils.book_new();
@@ -1120,6 +1111,7 @@ window.addEventListener('DOMContentLoaded', function() {
             XLSX.writeFile(wb, fn || ('METRICSscore.' + (type || 'xlsx')));
     }
 </script>
+
 
 
 
