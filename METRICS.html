@@ -1069,7 +1069,6 @@ window.addEventListener('DOMContentLoaded', function() {
         var cells = headerRow.getElementsByTagName('th');
         for (var i = 0; i < cells.length; i++) {
             if (i === cells.length - 1) {
-                headers.push('Available Options');
                 headers.push('User Decision');
             } else if (i !== 3) { // Skip adding header for the fourth column
                 headers.push(cells[i].innerText);
