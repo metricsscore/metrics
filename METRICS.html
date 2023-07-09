@@ -1070,8 +1070,8 @@ window.addEventListener('DOMContentLoaded', function() {
         for (var i = 0; i < cells.length; i++) {
             if (i === cells.length - 1) {
                 headers.push('Available Options');
-                headers.push('User Decision');    // New name for the column with radio buttons because it comes emptyy
-            } else {
+                headers.push('User Decision');
+            } else if (i !== 3) { // Skip adding header for the fourth column
                 headers.push(cells[i].innerText);
             }
         }
@@ -1082,7 +1082,15 @@ window.addEventListener('DOMContentLoaded', function() {
             var rowData = [];
             var cells = row.getElementsByTagName('td');
             for (var k = 0; k < cells.length; k++) {
-                rowData.push(cells[k].innerText);
+                if (k === 1) { // Check for the second column (0-indexed)
+                    if (cells[k].innerText !== 'n/a') {
+                        rowData.push(cells[k].innerText);
+                    } else {
+                        rowData.push(''); // Replace 'n/a' with an empty string
+                    }
+                } else if (k !== 3) { // Skip the fourth column entirely
+                    rowData.push(cells[k].innerText);
+                }
             }
             data.push(rowData);
         }
@@ -1090,16 +1098,16 @@ window.addEventListener('DOMContentLoaded', function() {
         // Add radio button values to the data array
         for (var j = 2; j < rows.length; j++) {
             var row = rows[j];
-            var rowData = [];
             var cells = row.getElementsByTagName('td');
             var radioCell = cells[cells.length - 1];
-            var radioButton = radioCell.querySelector('input[type="radio"]:checked'); // Get the checked radio button
-            var radioValue = '';
+            var radioButton = radioCell.querySelector('input[type="radio"]');
+
+            // Only process rows that contain a radio button
             if (radioButton) {
-                radioValue = radioButton.value;
+                var checkedButton = radioCell.querySelector('input[type="radio"]:checked');
+                var radioValue = checkedButton ? checkedButton.value : 'n/a';
+                data[j - 2].push(radioValue);
             }
-            rowData.push(radioValue);
-            data[j - 2] = data[j - 2].concat(rowData);
         }
 
         var sheet = XLSX.utils.aoa_to_sheet([headers].concat(data));
