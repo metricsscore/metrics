@@ -164,7 +164,45 @@
 				display: none;
 			  }
 			}
-			
+		.tooltip3 {
+			  position: relative;
+			  margin-right: 5px;
+			  margin-left: 5px;
+			  display: inline;
+			  background: #030303;
+			  border: none;
+			  padding: 4px 4px 4px 4px;
+			  color: #fff;
+			  box-shadow: 1px 1px 1px #B6B6B6;
+			  border-radius: 3px;
+			  text-shadow: none;
+			  cursor: pointer;
+			}
+
+			.tooltip3:hover {
+			  background: #666;
+			}
+
+			.tooltip3 .tooltiptext2 {
+			  visibility: hidden;
+			  width: 400px;
+			  background-color: black;
+			  color: #fff;
+			  text-shadow: none;
+			  text-align: left;
+			  font-size: small;
+			  border-radius: 6px;
+			  padding: 10px 15px;      
+			  /* Position the tooltip */
+			  position: absolute;
+			  z-index: 1;
+			  top: -5px;
+			  left: 100%;
+			}
+
+			.tooltip3:hover .tooltiptext2 {
+			  visibility: visible;
+			}	
 
 	</style>
 </head>
@@ -556,7 +594,9 @@
 				
 			<tr style="background-color:#fff1d6;color:black;">
 				<td></td>
-				<td colspan=2 style="text-align:right"> <b>Total score category:</b>  </td><td id='scorecategory'style="text-align:center;font-weight:bold"></td></tr>
+				<td colspan=2 style="text-align:right"> <div class="tooltip3">?<span class="tooltiptext2"> 0-20% = Very low;
+				21-40% = Low; 41-60% = Moderate; <br> 61-80% = Good; 81-100% = Excellent</span>
+				</div> <b>Quality category:</b>  </td><td id='scorecategory'style="text-align:center;font-weight:bold"></td></tr>
 				<td></td>
 
 
