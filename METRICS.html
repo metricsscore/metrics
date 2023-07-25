@@ -554,7 +554,10 @@
 				<td colspan=2 style="text-align:right"> <b>Total METRICS score:</b>  </td><td id='score'style="text-align:center;font-weight:bold">0.0%</td></tr>
 				<td></td>
 				
-			
+			<tr style="background-color:#fff1d6;color:black;">
+				<td></td>
+				<td colspan=2 style="text-align:right"> <b>Total score category:</b>  </td><td id='scorecategory'style="text-align:center;font-weight:bold"></td></tr>
+				<td></td>
 
 
 
@@ -1028,8 +1031,30 @@
 
 			  var totalScore = counter !== 0 ? (score / counter) * 100 : 0;
 			  var roundedScore = totalScore.toFixed(1);
+			  
+			  
+			  function getScoreCategory(roundedScore) {
+				  if (roundedScore >= 0 && roundedScore <= 20) {
+					return "Very low";
+				  } else if (roundedScore >= 21 && roundedScore <= 40) {
+					return "Low";
+				  } else if (roundedScore >= 41 && roundedScore <= 60) {
+					return "Moderate";
+				  } else if (roundedScore >= 61 && roundedScore <= 80) {
+					return "Good";
+				  } else if (roundedScore >= 81 && roundedScore <= 100) {
+					return "Excellent";
+				  } else {
+					return "Invalid";
+				  }
+				}
+				
+			const scorecategory = getScoreCategory(roundedScore);
 
 			  document.getElementById('score').innerHTML = roundedScore + '%';
+			  
+			  document.getElementById('scorecategory').innerHTML = scorecategory;
+
 			}
 			
 
