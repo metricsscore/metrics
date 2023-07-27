@@ -17,6 +17,6 @@ We hope that this repository will stimulate a discussion of the proposed items. 
 
 # How to Use This Repository?
 Under the “Discussions”, create a new discussion.
-Then, select the category “General”
+Then, select the category “General”.
 Then, enter the title with the item (e.g., item#1 or item#21 as appearing in the publication) that you want to discuss.
 
