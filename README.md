@@ -11,6 +11,7 @@ https://metricsscore.github.io/metrics/METRICS.html
 
 ### Publication
 **If you publish any work which uses this tool, please cite the following publication:**
+
 Kocak B, Akinci D'Antonoli T, Mercaldo N, et al. METhodological RadiomICs Score (METRICS): a quality scoring tool for radiomics research endorsed by EuSoMII. Insights Imaging. 2024;15(1):8. Published 2024 Jan 17. doi: https://doi.org/10.1186/s13244-023-01572-w
 
 
