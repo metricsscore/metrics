@@ -9,6 +9,9 @@ This repository was created to allow the radiomics community to comment on the M
 ### Access to Online METRICS tool
 https://metricsscore.github.io/metrics/METRICS.html
 
+###Authors
+Kocak B, Akinci D'Antonoli T, Mercaldo N, Alberich-Bayarri A, Baessler B, Ambrosini I, Andreychenko AE, Bakas S, Beets-Tan RGH, Bressem K, Buvat I, Cannella R, Cappellini LA, Cavallo AU, Chepelev LL, Chu LCH, Demircioglu A, deSouza NM, Dietzel M, Fanni SC, Fedorov A, Fournier LS, Giannini V, Girometti R, Groot Lipman KBW, Kalarakis G, Kelly BS, Klontzas ME, Koh DM, Kotter E, Lee HY, Maas M, Marti-Bonmati L, Müller H, Obuchowski N, Orlhac F, Papanikolaou N, Petrash E, Pfaehler E, Pinto Dos Santos D, Ponsiglione A, Sabater S, Sardanelli F, Seeböck P, Sijtsema NM, Stanzione A, Traverso A, Ugga L, Vallières M, van Dijk LV, van Griethuysen JJM, van Hamersvelt RW, van Ooijen P, Vernuccio F, Wang A, Williams S, Witowski J, Zhang Z, Zwanenburg A, Cuocolo R. 
+
 ### Publication
 **If you publish any work which uses this tool, please cite the following publication:**
 
