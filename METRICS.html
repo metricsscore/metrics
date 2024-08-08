@@ -1216,7 +1216,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
         return dl ?
             XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
-            XLSX.writeFile(wb, fn || ('METRICSscore.' + (type || 'xlsx')));
+            XLSX.writeFile(wb, fn || ('METRICSscore_' + (document.getElementById('PublicationID').value) + '.' + (type || 'xlsx')));
     }
 </script>
 
